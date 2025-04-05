@@ -1,19 +1,16 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
-import Login from "./pages/Login";
-import Hero from "./pages/Hero";
-import './App.css'
+import "./App.css";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <Router>
+    <div>
       <Navbar />
-      <Hero />
-      <Footer/>
-     
-    </Router>
+      <Home />
+      <Footer />
+    </div>
   );
 };
 

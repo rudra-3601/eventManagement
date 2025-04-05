@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { Link, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { IoIosLink } from "react-icons/io";
+import { SiEventstore } from "react-icons/si";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,39 +10,39 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-6 flex justify-between items-center h-[10vh]">
+        <Link to="/" className="text-gray-800 text-3xl font-bold flex items-center">
+          <SiEventstore className="mr-2" />
+          TrueEvent
+        </Link>
 
-        
-        <a href="/" className="text-2xl font-bold text-gray-800">
-        TrueEvent
-        </a>
-
-        <div className="hidden md:flex space-x-6">
-          <a href="#" className="text-gray-700 hover:text-blue-600">
+        <div className="hidden md:flex space-x-6 items-center">
+          <Link to="/" className="text-gray-700 hover:text-blue-600">
             Home
-          </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600">
+          </Link>
+          <Link to="/about" className="text-gray-700 hover:text-blue-600">
             About
-          </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600">
+          </Link>
+          <Link to="/events" className="text-gray-700 hover:text-blue-600">
             Events
-          </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600">
+          </Link>
+          <Link to="/gallery" className="text-gray-700 hover:text-blue-600">
             Gallery
-          </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600">
+          </Link>
+          <Link to="/contact" className="text-gray-700 hover:text-blue-600">
             Contact
-          </a>
+          </Link>
         </div>
-        <div className="hidden md:flex space-x-6">
-          <Link to={"/login"} className="text-gray-700 hover:text-blue-600">
+
+        <div className="hidden md:flex space-x-6 items-center">
+          <Link to="/login" className="flex items-center text-gray-700 hover:text-blue-600">
+            <IoIosLink size={20} className="mr-1" />
             Login
           </Link>
-          <a href="#" className="text-gray-700 hover:text-blue-600">
+          <Link to="/register" className="text-gray-700 hover:text-blue-600">
             Register
-          </a>
+          </Link>
         </div>
 
-       
         <button
           className="md:hidden text-gray-800"
           onClick={() => setIsOpen(!isOpen)}
@@ -48,31 +51,30 @@ const Navbar = () => {
         </button>
       </div>
 
-      
       {isOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="flex flex-col space-y-4 p-4">
-            <a href="#" className="text-gray-700 hover:text-blue-600">
+            <Link to="/" className="text-gray-700 hover:text-blue-600">
               Home
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600">
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-blue-600">
               About
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600">
+            </Link>
+            <Link to="/events" className="text-gray-700 hover:text-blue-600">
               Events
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600">
+            </Link>
+            <Link to="/gallery" className="text-gray-700 hover:text-blue-600">
               Gallery
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600">
+            </Link>
+            <Link to="/contact" className="text-gray-700 hover:text-blue-600">
               Contact
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600">
+            </Link>
+            <Link to="/login" className="text-gray-700 hover:text-blue-600">
               Login
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600">
+            </Link>
+            <Link to="/register" className="text-gray-700 hover:text-blue-600">
               Register
-            </a>
+            </Link>
           </div>
         </div>
       )}

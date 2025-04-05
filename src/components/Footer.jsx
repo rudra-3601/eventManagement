@@ -5,15 +5,18 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
+import { SiEventstore } from "react-icons/si";
+import { Link } from "react-router";
+
 
 const Footer = () => {
   return (
     <footer className="bg-gray-100 text-gray-800 py-12 mt-12">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         <div className="text-center md:text-left mb-8 md:mb-0">
-          <h3 className="text-3xl font-extrabold text-black mb-2">
+          <h3 className="text-5xl ml-3 mb-3">
             {" "}
-            TrueEvent
+            <SiEventstore />
           </h3>
           <p className="text-gray-500 text-sm">
             &copy; 2025 True Events. All rights reserved.
@@ -21,30 +24,24 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap justify-center space-x-8 mb-8 md:mb-0">
-          <a
-            href="#home"
-            className="text-gray-600 hover:text-purple-600 text-lg transition duration-300"
-          >
-            Home
-          </a>
-          <a
-            href="#about"
+          <Link
+            to={"/about"}
             className="text-gray-600 hover:text-purple-600 text-lg transition duration-300"
           >
             About
-          </a>
+          </Link>
           <a
             href="#services"
             className="text-gray-600 hover:text-purple-600 text-lg transition duration-300"
           >
             Services
           </a>
-          <a
-            href="#contact"
+          <Link
+            to={"/contact"}
             className="text-gray-600 hover:text-purple-600 text-lg transition duration-300"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         <div className="flex space-x-6 text-2xl mb-8 md:mb-0">
