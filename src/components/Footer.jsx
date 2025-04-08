@@ -30,12 +30,12 @@ const Footer = () => {
           >
             About
           </Link>
-          <a
-            href="#services"
+          <Link
+            to={"/admin-dashbord"}
             className="text-gray-600 hover:text-purple-600 text-lg transition duration-300"
           >
             Services
-          </a>
+          </Link>
           <Link
             to={"/contact"}
             className="text-gray-600 hover:text-purple-600 text-lg transition duration-300"

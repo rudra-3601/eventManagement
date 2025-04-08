@@ -7,19 +7,38 @@ const images = [
   "/foodFes.jpg",
   "/techTalk.jpg",
   "/concert.jpg",
-  "/artEvent.jpg",
-  "/foodFes.jpg",
-  "cricket.jpg"
+  "/bookFair.jpg",
+  "/charityGala.jpg",
+  "/cricket.jpg",
+  "/environment.jpg",
+  "/fashionShow.jpg",
+  "/event.jpg",
+  "/filmFest.jpg",
+  "/fitnessRun.jpg",
+  "/gallery.jpg",
+  "/gaming.jpg",
+  "/heritageDay.jpg",
+  "/musicJam.jpg",
+  "/robotWars.jpg",
 ];
 
 const Gallery = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-cover bg-center bg-opacity-60 bg-blend-overlay"
+    style={{ backgroundImage: "url('/galaxy.jpg')" }}>
       <Navbar />
-      <section className="py-16 px-4 bg-gradient-to-b from-white to-blue-50">
-        <div className="max-w-7xl mx-auto text-center mb-12">
-          <h2 className="text-4xl font-bold text-purple-600 mb-2">Event Gallery</h2>
-          <p className="text-gray-500 text-lg">Moments we’ve captured across events</p>
+      <section
+        className="bg-cover bg-center bg-opacity-60 bg-blend-overlay py-16 px-4"
+        
+      >
+        <div className="flex">
+          <div className="max-w-7xl mx-auto text-center mb-[5%] ">
+            <h2 className="text-7xl font-bold text-purple-600 mb-2">Gallery</h2>
+            <p className="text-gray-500 text-lg">
+              Moments we’ve captured across events
+            </p>
+          </div>
+          
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">

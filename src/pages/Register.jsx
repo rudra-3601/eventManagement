@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";  // Import useNavigate for redirection
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -8,17 +9,42 @@ const Register = () => {
   const [role, setRole] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const navigate = useNavigate();  // Initialize useNavigate hook for redirection
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Basic validation
     if (!name || !email || !password || !role) {
       setError("Please fill out all fields.");
       return;
     }
 
-    console.log("Registered with:", { name, email, password, role });
+    // Email format validation
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    // Password strength check (example: at least 6 characters)
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      return;
+    }
+
+    // Clear previous error messages
     setError("");
+
+    // Simulate successful registration (this could be a backend call in real apps)
+    console.log("Registered with:", { name, email, password, role });
+
+    // Set success message and redirect after a delay
+    setSuccessMessage("Registration successful! Redirecting to login...");
+    setTimeout(() => {
+      navigate("/login");  // Redirect to the login page after successful registration
+    }, 2000);  // Wait 2 seconds before redirect
   };
 
   return (
@@ -112,6 +138,7 @@ const Register = () => {
             </div>
 
             {error && <p className="text-red-500 text-sm">{error}</p>}
+            {successMessage && <p className="text-green-500 text-sm">{successMessage}</p>}
 
             <button
               className="w-full py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition duration-200"

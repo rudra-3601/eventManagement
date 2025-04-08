@@ -9,6 +9,8 @@ import About from "./pages/About.jsx";
 import Events from "./pages/Events.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Contact from "./pages/Contact.jsx";
+import UserDashboard from "./pages/UserDashboard.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -21,6 +23,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/events" element={<Events />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/dashbord" element={<UserDashboard/>} />
+        <Route path="/admin-dashbord" element={<AdminDashboard/>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
