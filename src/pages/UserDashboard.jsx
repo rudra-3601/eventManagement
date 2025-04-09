@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { events } from "../data/eventData"; // replace with user-specific events later
 
+import { events } from "../data/eventData";
 const UserDashboard = () => {
   const [sortOption, setSortOption] = useState("date");
 
@@ -21,9 +19,10 @@ const UserDashboard = () => {
   const sortedEvents = sortEvents(events, sortOption);
 
   return (
-    <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/galaxy.jpg')" }}>
-      <Navbar />
-
+    <div
+      className="min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/galaxy.jpg')" }}
+    >
       <section className="py-16 px-6 bg-white bg-opacity-90">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl text-purple-600 font-bold text-center mb-4">
@@ -64,9 +63,15 @@ const UserDashboard = () => {
                   className="w-full h-40 object-cover"
                 />
                 <div className="p-4 space-y-2">
-                  <h3 className="text-xl font-bold text-purple-700">{event.title}</h3>
-                  <p className="text-gray-600 text-sm">{event.date} • {event.location}</p>
-                  <p className="text-gray-700 text-sm">{event.description.slice(0, 60)}...</p>
+                  <h3 className="text-xl font-bold text-purple-700">
+                    {event.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {event.date} • {event.location}
+                  </p>
+                  <p className="text-gray-700 text-sm">
+                    {event.description.slice(0, 60)}...
+                  </p>
                 </div>
                 <div className="p-4">
                   <button className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700">
@@ -78,8 +83,6 @@ const UserDashboard = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

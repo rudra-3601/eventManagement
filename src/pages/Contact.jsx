@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 
 const Contact = () => {
   return (
@@ -8,7 +7,7 @@ const Contact = () => {
       className="min-h-screen bg-cover bg-center bg-opacity-60 bg-blend-overlay"
       style={{ backgroundImage: "url('/galaxy.jpg')" }}
     >
-      <Navbar />
+  
 
       <section className="flex flex-col md:flex-row items-center justify-center px-10  h-[80vh] relative">
         <div className="text-gray-800 text-center space-y-6 z-10 md:w-1/2">
@@ -66,7 +65,7 @@ const Contact = () => {
           </a>
         </p>
       </section>
-      <Footer />
+      
     </div>
   );
 };

@@ -1,23 +1,18 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
-
       {/* Hero Section */}
-      <section
-        className="flex flex-col md:flex-row items-center justify-between px-10 py-36 bg-cover bg-center bg-no-repeat text-white relative min-h-[60vh]"
-      >
+      <section className="flex flex-col md:flex-row items-center justify-between px-10 py-36 bg-cover bg-center bg-no-repeat text-white relative min-h-[60vh]">
         <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
         <div className="md:w-1/2 space-y-6 z-10">
           <h1 className="text-5xl font-bold text-purple-400">About Us</h1>
           <p className="text-lg leading-relaxed text-gray-100">
-            TrueEvent is your trusted hub for organizing and discovering sporting events.
-            We aim to make event planning seamless and participation thrilling. From local
-            tournaments to national championships, we've got you covered.
+            TrueEvent is your trusted hub for organizing and discovering
+            sporting events. We aim to make event planning seamless and
+            participation thrilling. From local tournaments to national
+            championships, we've got you covered.
           </p>
         </div>
         <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center z-10">
@@ -32,7 +27,9 @@ const About = () => {
       {/* Mission Section */}
       <section className="flex flex-col md:flex-row-reverse items-center justify-between px-10 py-20 bg-white text-gray-800">
         <div className="md:w-1/2 space-y-6">
-          <h2 className="text-4xl text-purple-600 font-semibold">Our Mission</h2>
+          <h2 className="text-4xl text-purple-600 font-semibold">
+            Our Mission
+          </h2>
           <p className="text-lg leading-relaxed">
             At TrueEvent, we believe sports have the power to unite people and
             build lasting communities. Our platform helps event organizers
@@ -85,8 +82,6 @@ const About = () => {
           />
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
